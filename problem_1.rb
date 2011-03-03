@@ -5,9 +5,7 @@
 
 class Problem1
   def multiples_of_3_or_5
-    sum = 0
-    (1..999).each { |n| sum += n if (n % 3 == 0 || n % 5 == 0) }
-    return sum
+    (1..999).inject(0) { |sum, n| (n%3 == 0 || n%5 == 0) ? sum + n : sum }
   end
 end
 
